@@ -1,0 +1,19 @@
+# npmでインストールしたパッケージ
+node_modules/
+
+
+# TypeScriptのコンパイル結果
+dist/
+
+
+# 環境変数・秘密情報
+.env
+.env.*
+
+
+# Vercelがローカルで作成する設定情報
+.vercel/
+
+
+# npmのエラーログ
+npm-debug.log*
