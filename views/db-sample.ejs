@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>商品一覧</title>
+</head>
+<body>
+  <h1>商品一覧</h1>
+  <ul>
+    <% products.forEach((product) => { %>
+      <li><%= product.name %>：<%= product.price %>円</li>
+    <% }) %>
+  </ul>
+</body>
+</html>
