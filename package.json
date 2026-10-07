@@ -21,13 +21,16 @@
   },
   "homepage": "https://github.com/Hiroki-211/Ai-drive-Project2026#readme",
   "dependencies": {
+    "dotenv": "^18.0.6",
     "ejs": "^6.0.1",
     "express": "^5.2.1",
+    "pg": "^8.23.1",
     "xepress": "^0.0.1-security"
   },
   "devDependencies": {
     "@types/express": "^5.0.6",
     "@types/node": "^26.6.3",
+    "@types/pg": "^8.23.1",
     "tsx": "^4.23.15",
     "typescript": "^7.0.2"
   }
