@@ -40,6 +40,19 @@ app.get('/api/db-check', async (_req, res) => {
   }
 });
 
+type Product = { id: number; name: string; price: number };
+
+app.get('/db-sample', async (_req, res) => {
+  try {
+    const result = await pool.query<Product>(
+      'SELECT id, name, price FROM products ORDER BY id'
+    );
+    res.render('db-sample', { products: result.rows });
+  } catch (error) {
+    console.error('商品一覧の取得に失敗しました', error);
+    res.status(503).send('商品一覧を表示できません');
+  }
+});
 
 // ------------------------------
 // サーバー起動
