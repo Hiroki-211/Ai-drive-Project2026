@@ -2,6 +2,9 @@ import express, { Request, Response } from 'express';
 import path from 'path';
 import { pool } from './db';  // db.tsで作成したNeonへの接続を利用する
 
+// TODOアプリ
+import todoRouter from './src/apps/todo/todoRouter';
+import todoViewRouter from './src/apps/todo/todoViewRouter';
 
 const app = express(); // Expressアプリケーションを作成
 const port: number = 3000; // ローカルで使用するポート番号
@@ -53,6 +56,10 @@ app.get('/db-sample', async (_req, res) => {
     res.status(503).send('商品一覧を表示できません');
   }
 });
+
+// TODOアプリ
+app.use('/todo', todoViewRouter); // 画面
+app.use('/api/v1/todos', todoRouter); // API
 
 // ------------------------------
 // サーバー起動
