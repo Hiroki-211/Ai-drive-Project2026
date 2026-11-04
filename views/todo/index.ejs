@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TODOリスト</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    .todo-form {
+      display: flex;
+      gap: 8px;
+    }
+    .todo-form input {
+      flex: 1;
+      padding: 10px;
+      font-size: 16px;
+      min-width: 0;
+    }
+    .todo-error {
+      min-height: 1.5em;
+      color: #c62828;
+      text-align: left;
+    }
+    .todo-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      text-align: left;
+    }
+    .todo-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 0;
+      border-bottom: 1px solid #eee;
+    }
+    .todo-item label {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      word-break: break-all;
+      cursor: pointer;
+    }
+    .todo-item.is-completed .todo-title {
+      color: #999;
+      text-decoration: line-through;
+    }
+    .todo-delete {
+      padding: 6px 12px;
+    }
+    .todo-empty {
+      color: #999;
+    }
+  </style>
+</head>
+
+
+<body>
+  <main>
+    <h1>TODOリスト</h1>
+
+    <!-- REQ-02: 新規登録 -->
+    <form id="todoForm" class="todo-form">
+      <input id="todoTitle" type="text" maxlength="100" placeholder="やることを入力（100文字以内）" autocomplete="off">
+      <button type="submit">登録</button>
+    </form>
+    <p id="todoError" class="todo-error" role="alert"></p>
+
+    <!-- REQ-01: 一覧表示 / REQ-03: 完了切り替え / REQ-04: 削除 -->
+    <ul id="todoList" class="todo-list"></ul>
+    <p id="todoEmpty" class="todo-empty" hidden>TODOはまだありません</p>
+  </main>
+  <script type="module" src="/todo/todoApi.js"></script>
+</body>
+</html>
